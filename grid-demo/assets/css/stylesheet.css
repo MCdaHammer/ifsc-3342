@@ -35,32 +35,32 @@ background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/7248/grid-1.p
 }
 
 header.primary {
-  background: rgba(207, 240, 23, 0.4);
-  width: 95.833%;
+  background: rgba(191, 224, 2, 0.692);
+  width: 98.337%;
   margin: 1.041%;
   float: left;
-  padding: 2.083%;
 }
 
 #content {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 64, 240, 0.6);
   float: left;
-  width: 45.833%;
-  margin-left: 1.041%;
+  width: 48.837%;
   padding: 1.041%;
+  margin-top: 1.041%;
 }
 
 aside {
-  width: 45.833%;
+  width: 48.837%;
   float: left;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(252, 0, 0, 0.753);
   margin-left: 1.041%;
+  margin-top: 1.041%;
 }
 
 footer.primary {
-  background: rgba(0, 0, 0, 0.4);
-  width: 95.833%;
-  margin: 1.041%;
+  background: rgba(49, 49, 49, 0.4);
+  width: 98.337%;
   float: left;
   padding: 1.041%;
+  margin-top: 1.041%;
 }
