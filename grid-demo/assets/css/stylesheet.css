@@ -29,20 +29,21 @@ html {
 background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/7248/grid-1.png");*/
 
 .container {
-  width: 960px;
+  width: 68vw;
   margin: 1.041% auto;
-  border: 1px solid #000;
 }
 
 header.primary {
-  background: rgba(191, 224, 2, 0.692);
   width: 98.337%;
   margin: 1.041%;
   float: left;
 }
 
+ul {
+  list-style-type:none;
+}
+
 #content {
-  background: rgba(0, 64, 240, 0.6);
   float: left;
   width: 48.837%;
   padding: 1.041%;
@@ -52,15 +53,81 @@ header.primary {
 aside {
   width: 48.837%;
   float: left;
-  background: rgba(252, 0, 0, 0.753);
   margin-left: 1.041%;
   margin-top: 1.041%;
 }
 
 footer.primary {
-  background: rgba(49, 49, 49, 0.4);
   width: 98.337%;
   float: left;
   padding: 1.041%;
   margin-top: 1.041%;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .meat{
+    float:none;
+    width:90%;
+    margin:5px auto;
+    background-color:blue;
+  }
+  .potatoes{
+    float:none;
+    width:90%;
+    margin:5px auto;
+    background-color:red;
+  }
+  .primary{
+    float:none;
+    width:100%;
+    background-color:rosybrown;
+    font-weight:bold;
+    text-align:center;
+    margin:5px auto;
+  }
+}
+@media screen and (min-width:651px) and (max-width:959px) {
+  .meat{
+    float:none;
+    width:90%;
+    margin:7.5px auto;
+    background-color:aquamarine
+
+  }
+  .potatoes{
+    float:none;
+    width:90%;
+    margin:7.5px auto;
+    background-color:blueviolet
+  }
+  .primary{
+    float:none;
+    width:100%;
+    background-color:forestgreen;
+    font-weight:italic;
+    text-align:center;
+    margin:7.5px auto
+  }
+}
+@media screen and (min-width: 960px) {
+  .meat{
+    float:none;
+    width:48.837%;
+    margin:10px auto;
+    background-color:darkgoldenrod;
+  }
+  .potatoes{
+    float:none;
+    width:48.837%;
+    margin:10px auto;
+    background-color:indigo;
+  }
+  .primary{
+    float:none;
+    width:100%;
+    background-color:indianred;
+    font-weight:underline;
+    text-align:center;
+    margin:10px auto;
+  }
 }
