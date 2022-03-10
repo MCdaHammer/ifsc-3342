@@ -1,13 +1,307 @@
 html {
-    box-sizing: border-box;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  
-  img {
-    max-width:100%;
-    height:auto;
-  }
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+font-family: Verdana, Geneva, sans-serif; 
+line-height: 1.5;
+}
+img {
+  max-width:100%;
+  height:auto;
+}
+
+.visuallyhidden {
+border: 0;
+clip: rect(0 0 0 0);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+white-space: nowrap; 
+}
+
+.container {
+max-width: 400px;
+margin: 0 auto;
+}
+
+body {
+background: #efefef;
+color: #222222;
+}
+a:link{
+color:#58D6AE;
+}
+a:visited{
+color:#AF8586;
+}
+
+.container{
+margin:0 auto;
+background:rgba(0,0,0,.2)
+}
+
+nav.primary{
+display:grid;
+grid-template-columns: repeat(4, 1fr);
+padding: 20px 20px 0px 20px;
+}
+
+nav a:link, nav a:visited{
+border: 1px solid #073D2C;
+padding: 3px 12px;
+text-align: center;
+text-decoration:none;
+color: #58D6AE;
+text-transform: uppercase;
+font-size: 0.85em;
+background: rgba(0,0,0,0.5);
+transition: background-color 0.5s ease;
+color: #86B051;
+}
+
+nav a:hover{
+background: rgba(0,0,0,.25)
+}
+
+main{
+padding: 5px 20px;
+}
+
+main h1 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+text-align: center;
+font-weight: 900;
+}
+main h1:before,
+main h1:after{
+background-color: #51B092;
+content: "/a0";
+flex-grow: 1;
+height: 1px;
+position: relative;
+top: 3em;
+}
+
+main h1:before{
+margin-right: 10px;
+}
+
+main h1:after{
+margin-left: 10px;
+}
+
+dl{
+display: grid;
+grid-template: auto / 3fr 1fr;
+}
+
+dt{
+font-weight: 800;
+grid-column: 1;
+padding: .55em 0;
+border-bottom:2px solid #073D2C;
+}
+
+dd{
+margin: 0;
+grid-column: 2;
+padding: .55em 0;
+border-bottom:2px solid #073D2C;
+}
+
+.related-links{
+display: flex;
+justify-content: center;
+list-style: none;
+padding: 0;
+}
+
+.related-links a{
+border: 1px solid #073D2C;
+padding: 5px 8px;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+color: #58D6AE;
+font-size: .85em;
+background: rgba(0,0,0,.5);
+transition: background-color 0.5s ease;
+color:#86B051
+}
+
+.related-links a:hover{
+background:rgba(0,0,0,.25);
+}
+
+.related-links li{
+margin-right:10px;
+}
+
+#skills{
+
+}
+
+#skills h2{
+text-decoration: underline;
+font-variant: small-caps;
+}
+
+#skills li{
+list-style-type: lower-greek;
+}
+
+.job, .certificate{
+border-bottom:1px solid #073D2C;
+padding-bottom: 25px
+}
+.job *[itemprop="jobTitle"],
+.job *[itemprop="name"],
+.job *[itemprop="url"],
+.job *[itemprop="addressLocality"],
+.certificate *[itemprop="name"]
+{
+display:block;
+}
+
+#experience h2{
+text-decoration: underline;
+font-variant: small-caps;
+}
+
+.job h3{
+margin:20px 0 5px 0;
+font-variant: small-caps;
+}
+
+footer{
+text-align:center;
+padding: 20px 0
+}
+
+/*-------------now that everything has been arranged, set up your grid-----------*/
+.page-title{
+grid-area:title;
+}
+
+#about{
+grid-area:about;
+}
+
+#skills{
+grid-area:skills;
+}
+
+#experience{
+grid-area:experience;
+}
+
+#education{
+grid-area:education;
+}
+
+main{
+display:grid;
+grid-gap:.5em;
+grid-template-areas: "title"
+  "about"
+  "skills"
+  "experience"
+  "education";
+}
+
+
+/*-------------------------------Media Queries-------------------------*/
+
+/*----------mobile size-------------*/
+@media screen and (min-width: 300px){
+.container{max-width: 600px}
+main.container{
+  grid-template-columns: 30% auto;
+  grid-template-areas: 
+    "title title"
+    "about about"
+    "skills experience"
+    ". education";
+}
+
+#about{
+  display:grid;
+  grid-gap: 1.5em;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "bio details details"
+    "related related related";
+}
+
+.bio{
+  grid-area:bio;
+}
+
+.details{
+  grid-area:details;
+}
+
+.related-links{
+  grid-area:related;
+  border-bottom: 1px solid #53A35C;
+  padding-bottom: 20px
+}
+  #stats{
+  display:grid;
+  grid-template-columns: 40% auto;
+  grid-template-areas: 
+    "name name"
+    "birthDate birthDate"
+    "nationality nationality"
+    "homeLocation homeLocation"
+    "phone phone"
+    "email email";
+    
+}
+
+}
+/*----------tablet size-------------*/
+@media screen and (min-width: 600px){
+.container{max-width:900px;}
+main.container {
+  grid-template-columns: 36.5% auto;
+  grid-template-areas:
+    "title title"
+    "about about"
+    "skills experience"
+    ". education";
+}
+
+#about{
+  display:grid;
+  grid-gap:2em;
+  grid-template-columns: 300px 1fr auto;
+  grid-template-areas:
+    "bio details details"
+    "related related related";
+}
+
+
+.bio{
+  grid-area:bio;
+}
+.details{
+  grid-area:details;
+}
+.related-links{
+  grid-area: related;
+  border-bottom: 1px solid #073D2C;
+  padding-bottom: 50px
+}
+
+}
