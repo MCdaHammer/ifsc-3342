@@ -82,23 +82,6 @@ justify-content: center;
 text-align: center;
 font-weight: 900;
 }
-main h1:before,
-main h1:after{
-background-color: #51B092;
-content: "/a0";
-flex-grow: 1;
-height: 1px;
-position: relative;
-top: 3em;
-}
-
-main h1:before{
-margin-right: 10px;
-}
-
-main h1:after{
-margin-left: 10px;
-}
 
 dl{
 display: grid;
@@ -168,7 +151,7 @@ padding-bottom: 25px
 .job *[itemprop="name"],
 .job *[itemprop="url"],
 .job *[itemprop="addressLocality"],
-.certificate *[itemprop="name"]
+.certificate *[itemprop="name"],
 {
 display:block;
 }
@@ -234,42 +217,6 @@ main.container{
     ". education";
 }
 
-#about{
-  display:grid;
-  grid-gap: 1.5em;
-  grid-template-columns: auto;
-  grid-template-areas:
-    "bio details details"
-    "related related related";
-}
-
-.bio{
-  grid-area:bio;
-}
-
-.details{
-  grid-area:details;
-}
-
-.related-links{
-  grid-area:related;
-  border-bottom: 1px solid #53A35C;
-  padding-bottom: 20px
-}
-  #stats{
-  display:grid;
-  grid-template-columns: 40% auto;
-  grid-template-areas: 
-    "name name"
-    "birthDate birthDate"
-    "nationality nationality"
-    "homeLocation homeLocation"
-    "phone phone"
-    "email email";
-    
-}
-
-}
 /*----------tablet size-------------*/
 @media screen and (min-width: 600px){
 .container{max-width:900px;}
@@ -285,7 +232,7 @@ main.container {
 #about{
   display:grid;
   grid-gap:2em;
-  grid-template-columns: 300px 1fr auto;
+  grid-template-columns: 2fr 1fr auto;
   grid-template-areas:
     "bio details details"
     "related related related";
