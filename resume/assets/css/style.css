@@ -14,7 +14,10 @@ img {
   max-width:100%;
   height:auto;
 }
-
+h1{
+font-variant: small-caps;
+text-decoration: underline;
+}
 .visuallyhidden {
 border: 0;
 clip: rect(0 0 0 0);
@@ -34,7 +37,7 @@ margin: 0 auto;
 
 body {
 background: #efefef;
-color: #222222;
+color: #073D2C;
 }
 a:link{
 color:#58D6AE;
@@ -81,6 +84,7 @@ flex-direction: row;
 justify-content: center;
 text-align: center;
 font-weight: 900;
+color: #073D2C;
 }
 
 dl{
@@ -107,6 +111,7 @@ display: flex;
 justify-content: center;
 list-style: none;
 padding: 0;
+flex-wrap: row;
 }
 
 .related-links a{
@@ -131,18 +136,22 @@ margin-right:10px;
 }
 
 #skills{
-
+color: #073D2C;
 }
 
 #skills h2{
 text-decoration: underline;
 font-variant: small-caps;
+color: #073D2C;
 }
 
 #skills li{
 list-style-type: lower-greek;
+color: #073D2C;
 }
-
+.mitch{
+display:grid;
+}
 .job, .certificate{
 border-bottom:1px solid #073D2C;
 padding-bottom: 25px
@@ -159,6 +168,11 @@ display:block;
 #experience h2{
 text-decoration: underline;
 font-variant: small-caps;
+color: #073D2C;
+}
+
+#experience{
+color: #073D2C;
 }
 
 .job h3{
@@ -195,7 +209,8 @@ grid-area:education;
 main{
 display:grid;
 grid-gap:.5em;
-grid-template-areas: "title"
+grid-template-areas: 
+  "title"
   "about"
   "skills"
   "experience"
@@ -206,22 +221,52 @@ grid-template-areas: "title"
 /*-------------------------------Media Queries-------------------------*/
 
 /*----------mobile size-------------*/
-@media screen and (min-width: 300px){
-.container{max-width: 600px}
+@media screen and (min-width: 390px){
+.container{max-width: 675px}
 main.container{
-  grid-template-columns: 30% auto;
+  grid-template-columns: 95%;
   grid-template-areas: 
-    "title title"
-    "about about"
-    "skills experience"
-    ". education";
+    "title"
+    "about"
+    "skills" 
+    "experience"
+    "education";
+}
+#about{
+  display: grid;
+  grid-gap: 2.5em;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-areas:
+    "mitch"
+    "bio"
+    "details"
+    "related";
+}
+.mitch{
+  grid-area:mitch;
+  justify-content: center;
+}
+.bio{
+  grid-area:bio;
+}
+.details{
+  grid-area:details;
+}
+.related-links{
+  grid-area: related;
+  border-bottom: 1px solid #073D2C;
+  padding-bottom: 25px;
+  
 }
 
+
+
+}
 /*----------tablet size-------------*/
-@media screen and (min-width: 600px){
-.container{max-width:900px;}
+@media screen and (min-width: 675px){
+.container{max-width:900px}
 main.container {
-  grid-template-columns: 36.5% auto;
+  grid-template-columns: 23.5% auto;
   grid-template-areas:
     "title title"
     "about about"
@@ -231,16 +276,19 @@ main.container {
 
 #about{
   display:grid;
-  grid-gap:2em;
-  grid-template-columns: 2fr 1fr auto;
+  grid-gap:1.5em;
+  grid-template-columns: 1fr 35% 40%;
   grid-template-areas:
-    "bio details details"
+    "mitch bio bio"
+    "details details details"
     "related related related";
 }
-
-
+.mitch{
+  grid-area:mitch;
+}
 .bio{
   grid-area:bio;
+  border-right: 1px solid #073D2C;
 }
 .details{
   grid-area:details;
@@ -252,3 +300,44 @@ main.container {
 }
 
 }
+/*----------full size---------------*/
+@media screen and (min-width:901px){
+.container{max-width: 1400px}
+main.container{
+  grid-template-columns: repeat(4, 1.5fr);
+  grid-template-areas:
+    "title title title title"
+    "about about skills skills"
+    "about about skills skills"
+    "education education education"
+    "experience experience experience";
+}
+#about{
+  display:grid;
+  grid-template-columns: repeat(3, 1.5fr);
+  grid-template-areas:
+    "details details details"
+    "bio bio bio"
+    "related related related";
+}
+
+}
+.details{
+  grid-area:details;
+}
+.related-links{
+  grid-area: related;
+  border-bottom: 1px solid #073D2C;
+  padding-bottom: 75px
+}
+#skills{
+  display:grid;
+
+}
+.skill{
+  grid-area: skill;
+}
+.jsSkill{
+  grid-area: skill;
+}
+
