@@ -160,7 +160,7 @@ padding-bottom: 25px
 .job *[itemprop="name"],
 .job *[itemprop="url"],
 .job *[itemprop="addressLocality"],
-.certificate *[itemprop="name"],
+.certificate *[itemprop="name"]
 {
 display:block;
 }
